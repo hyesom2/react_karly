@@ -1,0 +1,17 @@
+.heading {
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0;
+}
+
+.label {
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.paragraph {
+  font-weight: 400;
+  line-height: 160%;
+  letter-spacing: 0;
+}

@@ -1,0 +1,23 @@
+.text-shadow {
+  text-shadow: 1px 1px 0 #000;
+}
+
+.shadow-top-high {
+  box-shadow: 0px -16px 48px 0 rgba(0, 0, 0, 0.3);
+}
+.shadow-top-middle {
+  box-shadow: 0px -8px 36px 0 rgba(0, 0, 0, 0.2);
+}
+.shadow-top-low {
+  box-shadow: 0px -4px 24px 0 rgba(0, 0, 0, 0.1);
+}
+
+.shadow-bottom-high {
+  box-shadow: 0px 16px 48px 0 rgba(0, 0, 0, 0.3);
+}
+.shadow-bottom-middle {
+  box-shadow: 0px 8px 36px 0 rgba(0, 0, 0, 0.2);
+}
+.shadow-bottom-low {
+  box-shadow: 0px 4px 24px 0 rgba(0, 0, 0, 0.1);
+}
