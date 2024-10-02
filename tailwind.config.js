@@ -37,7 +37,16 @@ module.exports = {
         900: "#001433",
       }
     },
-    extend: {},
+    extend: {
+      fontSize: {
+        sm: "12rem",
+        md: "16rem",
+        lg: "21.3rem",
+        xl: "28.4rem",  
+        xxl: "37.9rem",
+        xxxl: "50.5rem",
+      },
+    },
   },
   plugins: [],
   corePlugins: {
