@@ -18,31 +18,15 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-isChecked_true:before {
-  content: "\e900";
-  color: #5f0080;
-}
-.icon-isChecked_false:before {
-  content: "\e901";
-}
-.icon-isSelected_true .path1:before {
-  content: "\e902";
-  color: rgb(95, 0, 128);
-}
-.icon-isSelected_true .path2:before {
-  content: "\e903";
-  margin-left: -1em;
-  color: rgb(196, 196, 196);
-}
-.icon-isSelected_false:before {
-  content: "\e904";
-}
 .icon-point:before {
   content: "\e905";
 }
