@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         transparent: "transparent",
+        currentColor: "currentColor",
         "black": "#000",
         "white": "#fff",
         "primary": "#5F0080",
@@ -46,6 +47,24 @@ module.exports = {
         xxl: "37.9rem",
         xxxl: "50.5rem",
       },
+      width: {
+        "140": "140rem",
+        "174": "174rem",
+      },
+      height: {
+        "18": "18rem",
+        "40": "40rem",
+        "54": "54rem",
+      },
+      borderRadius: {
+        "none": "0",
+        "1": "1rem",
+        DEFAULT: "4rem",
+        'full': '9999px',
+      },
+      spacing: {
+        "8": "8rem"
+      }
     },
   },
   plugins: [],
