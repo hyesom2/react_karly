@@ -42,19 +42,27 @@ module.exports = {
       fontSize: {
         sm: "12rem",
         md: "16rem",
+        "18": "18rem",
+        "36": "36rem",
         lg: "21.3rem",
         xl: "28.4rem",  
         xxl: "37.9rem",
         xxxl: "50.5rem",
       },
       width: {
+        "18": "18rem",
+        "36": "36rem",
         "140": "140rem",
         "174": "174rem",
+        "400": "400rem",
       },
       height: {
         "18": "18rem",
+        "36": "36rem",
         "40": "40rem",
+        "44": "44rem",
         "54": "54rem",
+        "60": "60rem",
       },
       borderRadius: {
         "none": "0",
@@ -63,7 +71,9 @@ module.exports = {
         'full': '9999px',
       },
       spacing: {
-        "8": "8rem"
+        "8": "8rem",
+        "20": "20rem",
+        "56": "56rem",
       }
     },
   },
