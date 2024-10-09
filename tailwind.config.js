@@ -71,6 +71,7 @@ module.exports = {
         'full': '9999px',
       },
       spacing: {
+        "2": "2rem",
         "8": "8rem",
         "20": "20rem",
         "56": "56rem",

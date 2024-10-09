@@ -7,29 +7,52 @@ interface InputProps {
   placeholder?: string;
   width?: number;
   height?: number;
+  hintText?: string;
+  hintTextHide?: boolean;
+  name?: string;
+  min?: number;
+  max?: number;
+  value?: string | undefined;
+  accept?: string;
+  checked?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
 }
 
-function Input({ srOnly, iconHide, type, placeholder, width, height }: InputProps) {
+function Input({
+  srOnly = false,
+  iconHide = false,
+  type = "text",
+  placeholder,
+  width,
+  height,
+  hintText,
+  hintTextHide = false,
+  name,
+  min,
+  max,
+  value,
+  accept,
+  checked,
+  onChange,
+  onKeyDown,
+  disabled
+  }: InputProps) {
   const inputId = useId();
-  let labelClassName = "label text-md text-content";
-  let inputClassName = "";
-  let iconClassName = "";
-
-  if (srOnly) {
-    labelClassName += " sr-only";
-  }
-  if (iconHide) {
-    iconClassName += "hidden";
-  }
+  const labelClassName = srOnly ? "sr-only" : "label text-md text-content";
+  const iconClassName = iconHide ? "hidden" : "inline-block ml-2 absolute top-1/2 -translate-y-1/2 right-20 w-36 h-36";
+  const hintTextClassName = hintTextHide ? "hidden" : "paragraph text-sm text-error";
+  let inputClassName = "paragraph w-full h-full border border-solid placeholder-gray-400 rounded hover:border-2 focus:border-2 active:border-2";
 
   switch (type) {
     case "search": {
-      inputClassName = `paragraph text-lg w-full h-full bg-white border border-solid border-primary pl-20 pr-56 rounded`;
+      inputClassName += " text-lg bg-white border-primary pl-20 pr-56";
       break;
     }
     // text, email, password 
     default: {
-      inputClassName = `paragraph text-md w-full h-full border border-solid border-gray-300 placeholder-gray-400 px-20 rounded`;
+      inputClassName += " text-md border-gray-300 px-20";
       break;
     }
   }
@@ -43,10 +66,26 @@ function Input({ srOnly, iconHide, type, placeholder, width, height }: InputProp
         style={{ height: `${height}rem`} }
         type={type}
         placeholder={placeholder}
+        name={name}
+        minLength={min}
+        maxLength={max}
+        value={value}
+        accept={accept}
+        checked={checked}
+        onChange={onChange}
+        onKeyDown={onKeyDown}
+        disabled={disabled}
       />
-      <button type="submit" className={`absolute top-1/2 -translate-y-1/2 right-20 w-36 h-36 ${iconClassName}`}>
-        <span className="icon icon-search text-primary text-36" aria-hidden="true"></span>
-      </button>
+      <span className={hintTextClassName}>{hintText}</span>
+      {
+        type === "search"
+          ?
+        <button type="submit" className={iconClassName} aria-label="검색">
+          <span className="icon icon-search text-primary text-36" aria-hidden="true"></span>
+        </button>
+          :
+        null
+      }
     </form>
   )
 }
