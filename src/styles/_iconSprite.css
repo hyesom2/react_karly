@@ -1,0 +1,13 @@
+.icon-sprite {
+  width: 214px;
+  height: 106px;
+  background-image: url("/img_sprite.png");
+  background-repeat: no-repeat;
+  background-size: 214px 106px; /* 스프라이트 이미지의 전체 크기 */
+}
+
+.icon-sprite.logo {
+  width: 82px;
+  height: 42px;
+  background-position: 0px 0px; /* 아이콘 1의 위치 */
+}
