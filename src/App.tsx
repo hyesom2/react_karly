@@ -1,9 +1,9 @@
-import Header from "@/components/header/Header";
+import Router from "./Router";
 
 function App() {
   return (
     <>
-      <Header />
+      <Router />
     </>
   )
 }
