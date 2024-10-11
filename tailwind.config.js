@@ -53,6 +53,7 @@ module.exports = {
       },
       width: {
         "1": "1rem",
+        "2": "2rem",
         "8": "8rem",
         "18": "18rem",
         "36": "36rem",
