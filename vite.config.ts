@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import { fileURLToPath, URL } from "node:url";
 import react from "@vitejs/plugin-react";
 
-export default defineConfig({
+const viteConfig = defineConfig({
   base: "/",
   server: {
     host: "localhost",
@@ -16,3 +16,5 @@ export default defineConfig({
     },
   },
 });
+
+export default viteConfig;
