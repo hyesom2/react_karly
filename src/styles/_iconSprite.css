@@ -16,6 +16,10 @@
   }
   
   &.sns {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; 
     width: 30px;
     height: 30px;
   }
@@ -36,7 +40,10 @@
   }
 
   &.footer {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;    
     width: 34px;
     height: 34px;
   }
