@@ -9,7 +9,7 @@ function AddCart() {
         <h2 className="label text-md mb-12">[풀무원] 탱탱쫄면 (4개입)</h2>
         <dl className="flex justify-between items-center">
           <dt className="label text-md">4,980원</dt>
-          <dd className="label text-md">1</dd>
+          <dd className="label text-md"><Button type="button" purpose="count" /></dd>
         </dl>
       </header>
       <dl className="flex flex-col gap-4">
