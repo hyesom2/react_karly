@@ -1,67 +1,40 @@
 import { ReactNode } from 'react';
 
 interface ButtonProps {
-  purpose?: "inquiry";
   children: ReactNode;
+  type: "button" | "submit" | "reset" | undefined;
+  purpose?: string;
+  height?: number;
+  bgColor?: "transparent" | "white" | "primary";
   onClick?: () => void;
 }
 
-function Button({ purpose, children, onClick }: ButtonProps) {
-  let ButtonClassName = "";
+function Button({ children, type, height, bgColor, purpose, onClick }: ButtonProps) {
+  const baseButtonClassName = "flex justify-center items-center";
+  let AddButtonClassName = "";
+  const inquiryHover = `hover:bg-gray-200 hover:font-semibold`;
+  const inquiryFocus = `focus:bg-gray-200 focus:font-semibold`;
 
-  switch (purpose) {
-    case "inquiry": {
-      ButtonClassName = "paragraph text-md text-content w-140 h-40 bg-white border border-solid border-gray-200 rounded-1 hover:border-2 focus:bg-gray-200 active:border-2";
+  switch (bgColor) {
+    case "primary": {
+      AddButtonClassName = `text-white hover:opacity-70 focus:opacity-70`;
+      break;
+    }
+    case "transparent": {
+      AddButtonClassName = `text-primary border border-solid border-primary hover:opacity-70 focus:opacity-70`;
+      break;
     }
   }
+
+  if (purpose == "inquiry") {
+    return (
+      <button type={type} className={`${baseButtonClassName} paragraph text-md text-content w-140 h-40 bg-transparent border border-solid border-gray-200 ${inquiryHover} ${inquiryFocus}`} onClick={onClick}>{ children }</button>
+    )
+  }
+
   return (
-    <button type="button" className={ ButtonClassName } onClick={ onClick }>{ children }</button>
+    <button type={type} className={`${baseButtonClassName} label text-md bg-${bgColor} w-full h-${height} ${AddButtonClassName} rounded`} onClick={onClick}>{ children }</button>
   )
 }
 
 export default Button;
-
-// function Buttons({ bgColor, purpose, children }: ButtonProps) {
-//   let AddClassName = "";
-
-//   switch (bgColor) {
-//     case "primary": {
-//       AddClassName += "bg-primary text-white"
-//       break;
-//     }
-//     case "white": {
-//       AddClassName += "bg-white text-content"
-//       break;
-//     }
-//   }
-
-//   switch (purpose) {
-//     case "inquiry": {
-//       AddClassName += " text-md border border-solid border-gray-200 rounded w-140 h-40";
-//       break;
-//     }
-//     case "cancel": {
-//       AddClassName += " text-md border border-solid border-gray-400 rounded w-174 h-54";
-//       break;
-//     }
-//     case "add-cart": {
-//       AddClassName += " text-md rounded w-174 h-54";
-//       break;
-//     }
-//   }
-//   return (
-//     <>
-//       <div className="buttons-footer">
-//         <button
-//           type="button"
-//           // className={`${AddClassName} ${className}`}
-//           className={ AddClassName }
-//         >
-//           { children }
-//         </button>
-//       </div>
-//     </>
-//   )
-// }
-
-// export default Buttons;
