@@ -1,0 +1,97 @@
+.iconSprite-menu {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/menu_sprite.png");
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+
+  &.gift {
+    background-position: -10px -10px;
+  }
+
+  &.vegetable {
+    background-position: -10px -54px;
+  }
+  
+  &.fruits {
+    background-position: -10px -98px;
+  }
+
+  &.seafood {
+    background-position: -10px -142px;
+  }
+
+  &.meat {
+    background-position: -10px -186px;
+  }
+
+  &.soup {
+    background-position: -10px -230px;
+  }
+
+  &.salary {
+    background-position: -10px -274px;
+  }
+
+  &.oil {
+    background-position: -10px -318px;
+  }
+
+  &.drink {
+    background-position: -10px -362px;
+  }
+
+  &.snack {
+    background-position: -10px -406px;
+  }
+
+  &.bakery {
+    background-position: -10px -450px;
+  }
+
+  &.drug {
+    background-position: -10px -494px;
+  }
+
+  &.wine {
+    background-position: -10px -538px;
+  }
+
+  &.traditional-liquor {
+    background-position: -10px -582px;
+  }
+
+  &.living {
+    background-position: -10px -626px;
+  }
+
+  &.skincare {
+    background-position: -10px -670px;
+  }
+
+  &.hair {
+    background-position: -10px -714px;
+  }
+
+  &.kitchen {
+    background-position: -10px -758px;
+  }
+
+  &.appliances {
+    background-position: -10px -802px;
+  }
+
+  &.pets {
+    background-position: -10px -846px;
+  }
+
+  &.baby {
+    background-position: -10px -890px;
+  }
+
+  &.travel {
+    background-position: -10px -934px;
+  }
+}
