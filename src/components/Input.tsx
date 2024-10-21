@@ -25,7 +25,6 @@ function Input({
   iconHide = false,
   type = "text",
   placeholder,
-  width,
   height,
   hintText,
   hintTextHide = false,
@@ -58,7 +57,7 @@ function Input({
   }
   
   return (
-    <form className="relative" style={{ width: `${width}rem` }}>
+    <>
       <label htmlFor={inputId} className={labelClassName}>아이디<span className="icon icon-point label text-sm text-error" aria-label="hidden"></span></label>
       <input
         id={inputId}
@@ -86,7 +85,7 @@ function Input({
           :
         null
       }
-    </form>
+    </>
   )
 }
 
