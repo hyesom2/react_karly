@@ -1,67 +1,75 @@
 import { ReactNode } from 'react';
 
 interface ButtonProps {
-  purpose?: "inquiry";
-  children: ReactNode;
+  children?: ReactNode;
+  type?: "button" | "submit" | "reset" | undefined;
+  purpose?: string;
+  height?: number;
+  bgColor?: "transparent" | "white" | "primary";
+  disabled?: boolean;
   onClick?: () => void;
 }
 
-function Button({ purpose, children, onClick }: ButtonProps) {
-  let ButtonClassName = "";
+function Button({ children, type, height, bgColor, purpose, disabled, onClick }: ButtonProps) {
+  const baseButtonClassName = "flex justify-center items-center flex-shrink-1";
+  let AddButtonClassName = "";
+  const inquiryHover = `hover:bg-gray-200 hover:font-semibold`;
+  const inquiryFocus = `focus:bg-gray-200 focus:font-semibold`;
+  const defaultHover = `hover:opacity-70`;
+  const defaultFocus = `focus:opacity-70`;
+  let countClassName = `inline-flex justify-center items-center text-xl w-full h-full`;
 
-  switch (purpose) {
-    case "inquiry": {
-      ButtonClassName = "paragraph text-md text-content w-140 h-40 bg-white border border-solid border-gray-200 rounded-1 hover:border-2 focus:bg-gray-200 active:border-2";
+  switch (bgColor) {
+    case "primary": {
+      AddButtonClassName = `bg-primary text-white ${defaultHover} ${defaultFocus}`;
+      break;
+    }
+    case "transparent": {
+      AddButtonClassName = `bg-transparent text-primary border border-solid border-primary ${defaultHover} ${defaultFocus}`;
+      break;
+    }
+    case "white": {
+      AddButtonClassName = `bg-white text-content border border-solid border-gray-400 ${defaultHover} ${defaultFocus}`;
+      break;      
     }
   }
+
+  if (disabled) {
+    AddButtonClassName = `text-white bg-gray-100 cursor-not-allowed`;
+  }
+
+  switch (height) {
+    case 54: {
+      AddButtonClassName += ` h-54`;
+      break;
+    }
+    case 44: {
+      AddButtonClassName += ` h-44`;
+      break;
+    }
+  }
+  
+  if (purpose == "inquiry") {
+    return (
+      <button type={type} className={`${baseButtonClassName} paragraph text-md text-content w-140 h-40 bg-transparent border border-solid border-gray-200 ${inquiryHover} ${inquiryFocus}`} onClick={onClick}>{ children }</button>
+    )
+  }
+
+  if (purpose == "count") {
+    return (
+      <div className="flex justify-center items-center border border-solid border-gray-200">
+        <button type="button" className="border-none w-30 h-30" aria-label="minus" disabled><span className={`icon icon-minus text-gray-300 ${countClassName} cursor-not-allowed`} aria-hidden="true"></span></button>
+        {/* <button type="button" className="border-none w-30 h-30"><span className={`icon icon-minus text-content ${countClassName}`} aria-hidden="true"></span></button> */}
+        <span className="label text-md text-black mx-8">1</span>
+        <button type="button" className="border-none w-30 h-30" aria-label="plus"><span className={`icon icon-plus text-content ${countClassName}`} aria-hidden="true"></span></button>
+      </div>
+
+    )
+  }
+
   return (
-    <button type="button" className={ ButtonClassName } onClick={ onClick }>{ children }</button>
+    <button type={type} className={`${baseButtonClassName} label text-md w-full ${AddButtonClassName} rounded`} onClick={onClick} disabled={disabled}>{ children }</button>
   )
 }
 
 export default Button;
-
-// function Buttons({ bgColor, purpose, children }: ButtonProps) {
-//   let AddClassName = "";
-
-//   switch (bgColor) {
-//     case "primary": {
-//       AddClassName += "bg-primary text-white"
-//       break;
-//     }
-//     case "white": {
-//       AddClassName += "bg-white text-content"
-//       break;
-//     }
-//   }
-
-//   switch (purpose) {
-//     case "inquiry": {
-//       AddClassName += " text-md border border-solid border-gray-200 rounded w-140 h-40";
-//       break;
-//     }
-//     case "cancel": {
-//       AddClassName += " text-md border border-solid border-gray-400 rounded w-174 h-54";
-//       break;
-//     }
-//     case "add-cart": {
-//       AddClassName += " text-md rounded w-174 h-54";
-//       break;
-//     }
-//   }
-//   return (
-//     <>
-//       <div className="buttons-footer">
-//         <button
-//           type="button"
-//           // className={`${AddClassName} ${className}`}
-//           className={ AddClassName }
-//         >
-//           { children }
-//         </button>
-//       </div>
-//     </>
-//   )
-// }
-
-// export default Buttons;
