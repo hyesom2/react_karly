@@ -1,0 +1,19 @@
+.banner {
+  width: 100vw;
+  height: 370px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.banner-01 {
+  background-image: url("/banner01.png");
+}
+.banner-02 {
+  background-image: url("/banner02.png");
+}
+.banner-03 {
+  background-image: url("/banner03.png");
+}
+.banner-04 {
+  background-image: url("/banner04.png");
+}
