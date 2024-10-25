@@ -13,11 +13,11 @@ function List({ type }: ListProps) {
           <li className="flex items-center text-primary transition-all duration-300 ease-in-out">
             <Link to="/register" className="paragraph text-sm hover:font-bold focus:font-bold active:font-bold">회원가입</Link>
           </li>
-          <Divide height={13} bgColor="bg-gray-300" />
+          <Divide height={13} bgColor="bg-gray-300" mx={12} />
           <li className="flex items-center text-primary transition-all duration-300 ease-in-out">
             <Link to="/login" className="paragraph text-sm hover:font-bold focus:font-bold active:font-bold">로그인</Link>
           </li>
-          <Divide height={13} bgColor="bg-gray-300" />
+          <Divide height={13} bgColor="bg-gray-300" mx={12} />
           <li className="text-content">
             <Link to="/service" className="paragraph text-sm hover:font-bold focus:font-bold active:font-bold transition-all duration-300 ease-in-out">고객센터</Link>
             <span className="icon icon-triangle_bottom text-sm text-black ml-4 cursor-pointer"></span>
@@ -39,7 +39,7 @@ function List({ type }: ListProps) {
       return (
         <ul className="flex justify-end items-center w-full">
           <li><Link to="/" className="paragraph text-sm text-content">아이디 찾기</Link></li>
-          <Divide height={10} bgColor="bg-content"></Divide>
+          <Divide height={10} bgColor="bg-content" mx={4}></Divide>
           <li><Link to="/" className="paragraph text-sm text-content">비밀번호 찾기</Link> 찾기</li>
         </ul>
       )

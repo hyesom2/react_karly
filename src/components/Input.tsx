@@ -25,6 +25,7 @@ function Input({
   iconHide = false,
   type = "text",
   placeholder,
+  width,
   height,
   hintText,
   hintTextHide = false,
@@ -42,7 +43,7 @@ function Input({
   const labelClassName = srOnly ? "sr-only" : "label text-md text-content";
   const iconClassName = iconHide ? "hidden" : "inline-block ml-2 absolute top-1/2 -translate-y-1/2 right-20 w-36 h-36";
   const hintTextClassName = hintTextHide ? "hidden" : "paragraph text-sm text-error";
-  let inputClassName = "paragraph w-full h-full border border-solid placeholder-gray-400 rounded hover:border-2 focus:border-2 active:border-2";
+  let inputClassName = "paragraph w-full h-full border border-solid placeholder-gray-400 rounded hover:border-2 focus:border-2 active:border-2 flex-shrink-0";
 
   switch (type) {
     case "search": {
@@ -62,7 +63,7 @@ function Input({
       <input
         id={inputId}
         className={inputClassName}
-        style={{ height: `${height}rem`} }
+        style={{ width:`${width}rem`, height: `${height}rem`} }
         type={type}
         placeholder={placeholder}
         name={name}

@@ -20,7 +20,7 @@ function Header() {
             <SpriteIcons type="logo"/>
             <ul className="flex items-center ml-12">
               <li><Link to="/" className="label text-lg text-primary hover:text-primary">마켓칼리</Link></li>
-              <Divide height={14} bgColor="bg-border" />
+              <Divide height={14} bgColor="bg-border" mx={12} />
               <li><Link to="/" className="label text-lg text-gray-400 hover:text-primary">뷰티칼리</Link></li>
             </ul>
           </div>
@@ -49,7 +49,7 @@ function Header() {
             </button>
             { show && <Menu /> }
           </li>
-          <ul className="flex justify-center items-center">
+          <ul className="flex justify-center items-center my-16">
             <li className="w-150 h-40">
               <Link to="/" className="inline-flex justify-center items-center w-full h-full label text-md text-content hover:text-primary hover:underline hover:underline-offset-2">신상품</Link>
             </li>
