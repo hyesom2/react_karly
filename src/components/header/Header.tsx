@@ -20,7 +20,7 @@ function Header() {
             <SpriteIcons type="logo"/>
             <ul className="flex items-center ml-12">
               <li><Link to="/" className="label text-lg text-primary hover:text-primary">마켓칼리</Link></li>
-              <Divide height={14} bgColor="bg-border" />
+              <Divide height={14} bgColor="bg-border" mx={12} />
               <li><Link to="/" className="label text-lg text-gray-400 hover:text-primary">뷰티칼리</Link></li>
             </ul>
           </div>
