@@ -49,7 +49,7 @@ function Header() {
             </button>
             { show && <Menu /> }
           </li>
-          <ul className="flex justify-center items-center">
+          <ul className="flex justify-center items-center my-16">
             <li className="w-150 h-40">
               <Link to="/" className="inline-flex justify-center items-center w-full h-full label text-md text-content hover:text-primary hover:underline hover:underline-offset-2">신상품</Link>
             </li>
