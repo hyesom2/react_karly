@@ -1,10 +1,14 @@
 import MainBanner from "@/components/MainBanner";
+import Popup_ad from '@/components/Popup_ad';
+import popupAdStore from '@/stores/components/popupAdStore';
 
 function Home() {
+  const { show } = popupAdStore();
+  
   return (
     <>
       <MainBanner />
-      <h1 className="text-xxl">Home입니다.</h1>
+      { show && <Popup_ad /> }
     </>
   )
 }
