@@ -16,6 +16,7 @@ function Button({ children, type, height, bgColor, purpose, className, disabled,
   const baseButtonClassName = "flex justify-center items-center flex-shrink-1";
   const countClassName = `inline-flex justify-center items-center text-xl w-full h-full`;
   const bannerClassName = `flex justify-center items-center bg-black w-52 h-52 opacity-20 rounded-full`;
+  const popupAdClassName = `paragraph text-md text-content bg-white w-1/2 py-30 border border-solid border-gray-100 hover:font-semibold hover:bg-gray-100 focus: font-semibold focus:bg-gray-100`;
   const inquiryHover = `hover:bg-gray-200 hover:font-semibold`;
   const inquiryFocus = `focus:bg-gray-200 focus:font-semibold`;
   const defaultHover = `hover:opacity-70`;
@@ -71,6 +72,12 @@ function Button({ children, type, height, bgColor, purpose, className, disabled,
   if (purpose == "banner") {
     return (
       <button type="button" className={`${className} ${bannerClassName}`} onClick={onClick}>{children}</button>
+    )
+  }
+
+  if (purpose == "popup_ad") {
+    return (
+      <button type="button" className={`${className} ${popupAdClassName}`} onClick={onClick}>{ children }</button>
     )
   }
 

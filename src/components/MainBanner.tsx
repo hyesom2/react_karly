@@ -21,6 +21,7 @@ function MainBanner() {
 
   const settings = {
     dots: false,
+    className: "relative w-screen",
     infinite: true,
     speed: 500,
     autoplay: true,
