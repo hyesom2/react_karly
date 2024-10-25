@@ -10,6 +10,7 @@
 /* tailwind components css */
 @import "tailwindcss/components";
 /* custom components css */
+@import "./_main-banner.css";
 
 
 /* tailwind utilities css */
