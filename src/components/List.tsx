@@ -44,6 +44,19 @@ function List({ type }: ListProps) {
         </ul>
       )
     }
+    case "product": {
+      return (
+        <ul className="flex justify-end items-center w-full">
+          <li className="label text-md text-content">
+            <button type="button" className="hover:text-primary focus:text-primary active:text-content">추천순</button>
+          </li>
+          <Divide height={10} bgColor="bg-gray-300" mx={8}></Divide>
+          <li className="label text-md text-gray-300">
+            <button type="button" className="hover:text-primary focus:text-primary active:text-content">최근 등록순</button>
+          </li>
+        </ul>
+      )
+    }
   }
 }
 

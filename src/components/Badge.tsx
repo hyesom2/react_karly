@@ -22,7 +22,7 @@ function Badge({ children, purpose }: BadgeProps) {
       break;
     }
     case "earn": {
-      AddClassName += "text-white bg-accent";
+      AddClassName += "text-white bg-accent rounded-12";
       break;
     }
     case "only": {
