@@ -1,9 +1,10 @@
 import { useId } from 'react';
 
 interface InputProps {
-  srOnly?: boolean;
+  labelText?: string;
+  labelHide?: boolean;
   iconHide?: boolean;
-  type?: "text" | "search" | "email" | "password" | "radio" | "number" | "file" | "time" | "checked",
+  type?: "text" | "search" | "email" | "password" | "radio" | "number" | "file" | "time" | "checkbox",
   placeholder?: string;
   width?: number;
   height?: number;
@@ -21,7 +22,8 @@ interface InputProps {
 }
 
 function Input({
-  srOnly = false,
+  labelHide = false,
+  labelText,
   iconHide = false,
   type = "text",
   placeholder,
@@ -40,8 +42,8 @@ function Input({
   disabled
   }: InputProps) {
   const inputId = useId();
-  const labelClassName = srOnly ? "sr-only" : "label text-md text-content";
-  const iconClassName = iconHide ? "hidden" : "inline-block ml-2 absolute top-1/2 -translate-y-1/2 right-20 w-36 h-36";
+  const labelClassName = labelHide ? "sr-only" : "label text-md text-content";
+  const iconHideClassName = iconHide ? "hidden" : "";
   const hintTextClassName = hintTextHide ? "hidden" : "paragraph text-sm text-error";
   let inputClassName = "paragraph w-full h-full border border-solid placeholder-gray-400 rounded hover:border-2 focus:border-2 active:border-2 flex-shrink-0";
 
@@ -59,7 +61,7 @@ function Input({
   
   return (
     <>
-      <label htmlFor={inputId} className={labelClassName}>아이디<span className="icon icon-point label text-sm text-error" aria-label="hidden"></span></label>
+      <label htmlFor={inputId} className={labelClassName}>{labelText}<span className={`${iconHideClassName} icon icon-point label text-sm text-error`} aria-label="hidden"></span></label>
       <input
         id={inputId}
         className={inputClassName}
@@ -80,7 +82,7 @@ function Input({
       {
         type === "search"
           ?
-        <button type="submit" className={iconClassName} aria-label="검색">
+          <button type="submit" className={`${iconHideClassName} inline-block ml-2 absolute top-1/2 -translate-y-1/2 right-20 w-36 h-36`} aria-label="검색">
           <span className="icon icon-search text-primary text-36" aria-hidden="true"></span>
         </button>
           :
