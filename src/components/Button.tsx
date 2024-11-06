@@ -51,6 +51,10 @@ function Button({ children, type, width, height, bgColor, purpose, className, di
       AddButtonClassName += ` h-44`;
       break;
     }
+    case 36: {
+      AddButtonClassName += ` h-36 text-sm`;
+      break;
+    }
   }
   
   if (purpose == "inquiry") {

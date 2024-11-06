@@ -1,8 +1,12 @@
 import MenuSpriteIcons from "@/components/MenuSpriteIcons";
 
-function Menu() {
+interface MenuProps {
+  className: string;
+}
+
+function Menu({ className }: MenuProps) {
   return (
-    <aside className="absolute top-full left-0 overflow-y-scroll">
+    <aside className={`${className} absolute top-full left-0 z-[100] overflow-y-scroll`}>
       <ul className="h-640">
         <MenuSpriteIcons type="gift">선물</MenuSpriteIcons>
         <MenuSpriteIcons type="vegetable">채소</MenuSpriteIcons>

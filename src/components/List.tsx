@@ -1,15 +1,21 @@
+import menuStore from '@/stores/components/Header/menuStore';
+import { ReactNode } from "react";
 import { Link } from 'react-router-dom';
 import Divide from '@/components/Divide';
 
 interface ListProps {
   type: string;
+  children?: ReactNode;
+  className?: string;
 }
 
-function List({ type }: ListProps) {
+function List({ type, children }: ListProps) {
+  const { setHover } = menuStore();
+
   switch (type) {
     case "header":
       return (
-        <ul className="flex justify-end items-center h-36 w-1050 mx-auto">
+        <ul className={`relative flex justify-end items-center h-36 w-1050 mx-auto`}>
           <li className="flex items-center text-primary transition-all duration-300 ease-in-out">
             <Link to="/register" className="paragraph text-sm hover:font-bold focus:font-bold active:font-bold">회원가입</Link>
           </li>
@@ -18,10 +24,11 @@ function List({ type }: ListProps) {
             <Link to="/login" className="paragraph text-sm hover:font-bold focus:font-bold active:font-bold">로그인</Link>
           </li>
           <Divide height={13} bgColor="bg-gray-300" mx={12} />
-          <li className="text-content">
+          <li className={`text-content peer`} onMouseEnter={setHover} onMouseLeave={setHover}>
             <Link to="/service" className="paragraph text-sm hover:font-bold focus:font-bold active:font-bold transition-all duration-300 ease-in-out">고객센터</Link>
             <span className="icon icon-triangle_bottom text-sm text-black ml-4 cursor-pointer"></span>
           </li>
+          { children }
         </ul>
       )
     case "products":

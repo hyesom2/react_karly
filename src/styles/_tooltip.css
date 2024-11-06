@@ -1,0 +1,31 @@
+.tooltip {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: -5px;
+  z-index: 100;
+}
+
+.tooltip::before,
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 10px solid transparent;
+}
+
+.tooltip::before {
+  border-bottom-color: #C4C4C4;
+}
+
+.tooltip::after {
+  top: calc(-24px + 1px);
+  border-bottom-color: #fff;
+}

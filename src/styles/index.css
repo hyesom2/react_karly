@@ -11,6 +11,7 @@
 @import "tailwindcss/components";
 /* custom components css */
 @import "./_main-banner.css";
+@import "./_tooltip.css";
 
 
 /* tailwind utilities css */
